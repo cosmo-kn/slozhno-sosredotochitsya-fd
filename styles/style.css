@@ -1,5 +1,110 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  padding: var(--spacing-sm);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-main);
+  /* background-color: var(--dark-color); */
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.header {
+  min-block-size: 668px;
+  position: relative;
+
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  color: var(--accent-color, #ff0070);
+  border: none;
+  background-color: transparent;
+  line-height: var(--line-height-main);
+  padding-inline: 12px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color, #ff0070);
+}
+
+.header__theme-menu {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.header__title-main {
+  color: var(--main-title-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  font-weight: var(--weight-bold);
+  line-height: 0.83;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  place-self: center;
+}
+
+.title-decor {
+  background-color: var(--accent-color, #ff0070);
+  font-weight: var(--weight-bold);
+  color: var(--dark-color, #000028);
+}
+
+.main p {
+  color: var(--main-text-color, #f1b2ce);
+}
+
+.grid {
+  /* position: relative; */
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  gap: 55px;
+}
+
+.label-record {
+  position: absolute;
+  text-transform: uppercase;
+  color: var(--accent-color, #ff0070);
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.label-record::after {
+  content: "";
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  /* vertical-align: middle; */
+  margin-inline-start: 10px;
+  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+}
+
+.decorated-zone::before{
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  content:"";
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+  right: 0;
+
+}
+
+.decorated-zone::after{
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  content:"";
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+  left: 0;
+  bottom: 0;
+
 }
