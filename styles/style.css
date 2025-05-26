@@ -1,42 +1,48 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  padding: var(--spacing-sm);
   font-family: var(--font-family-main);
   font-size: var(--font-size-main);
-  /* background-color: var(--dark-color); */
+  background-color: var(--dark-color);
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
 .header {
+  padding: var(--spacing-sm);
+  block-size: 100vh;
   min-block-size: 668px;
   position: relative;
-  block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
 }
 
 .header__theme-menu-button {
   text-transform: lowercase;
   color: var(--accent-color, #ff0070);
-  border: none;
   background-color: transparent;
-  line-height: var(--line-height-main);
+  line-height: 18px;
   padding-inline: 12px;
+  padding-block: 3px;
+  border: 1px solid transparent;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color, #ff0070);
 }
 
-.header__theme-menu {
-  align-self: flex-end;
-  justify-self: flex-end;
-}
-
 .header__theme-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .header__title-main {
@@ -45,7 +51,7 @@
   font-weight: var(--weight-bold);
   line-height: 0.83;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  place-self: center;
+  align-self: center;
 }
 
 .title-decor {
@@ -54,57 +60,54 @@
   color: var(--dark-color, #000028);
 }
 
-.main p {
-  color: var(--main-text-color, #f1b2ce);
-}
-
-.grid {
-  display: grid;
-  grid-template-rows: 1fr min-content 1fr;
-  gap: 55px;
-  
+.header__description {
+  align-self: center;
+  background-color: var(--accent-color, #ff0070);
 }
 
 .label-record {
   position: absolute;
   text-transform: uppercase;
   color: var(--accent-color, #ff0070);
-  right: 10px;
+  right: 20px;
+  top: 10px;
   display: flex;
   align-items: center;
 }
 
 .label-record::after {
-  content: "";
+  content: '';
   display: inline-block;
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  /* vertical-align: middle; */
   margin-inline-start: 10px;
   background-color: var(--accent-color, #ff0070);
   box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
 }
 
-.decorated-zone::before{
+.decorated-zone::before {
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  content:"";
+  content: '';
   border-top: 1px solid var(--accent-color, #ff0070);
   border-right: 1px solid var(--accent-color, #ff0070);
-  right: 0;
-
+  right: 10px;
+  top: 10px;
 }
 
-.decorated-zone::after{
+.decorated-zone::after {
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  content:"";
+  content: '';
   border-bottom: 1px solid var(--accent-color, #ff0070);
   border-left: 1px solid var(--accent-color, #ff0070);
-  left: 0;
-  bottom: 0;
+  left: 10px;
+  bottom: 10px;
 }
 
+.main p {
+  color: var(--main-text-color, #f1b2ce);
+}
