@@ -11,7 +11,7 @@
 .header {
   min-block-size: 668px;
   position: relative;
-
+  block-size: 100dvh;
 }
 
 .header__theme-menu-button {
@@ -59,10 +59,10 @@
 }
 
 .grid {
-  /* position: relative; */
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   gap: 55px;
+  
 }
 
 .label-record {
@@ -106,5 +106,5 @@
   border-left: 1px solid var(--accent-color, #ff0070);
   left: 0;
   bottom: 0;
-
 }
+
