@@ -15,27 +15,27 @@
 /* ШАПКА */
 
 .header {
-  padding: var(--spacing-sm);
-  block-size: 100vh;
-  min-block-size: 668px;
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  padding: var(--spacing-sm);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .header__theme-menu {
-  align-self: center;
   justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-button {
-  text-transform: lowercase;
-  color: var(--accent-color, #ff0070);
-  background-color: transparent;
-  line-height: 18px;
+  border: 1px solid transparent;
   padding-inline: 12px;
   padding-block: 3px;
-  border: 1px solid transparent;
+  color: var(--accent-color, #ff0070);
+  line-height: 18px;
+  text-transform: lowercase;
+  background-color: transparent;
 }
 
 .header__theme-menu-button_active {
@@ -48,19 +48,22 @@
   gap: 10px;
 }
 
-.header__title {
-  color: var(--main-title-color, #db00ff);
-  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
-  font-weight: var(--weight-bold);
-  line-height: 0.83;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+.title-main {
   align-self: center;
+  color: var(--main-title-color, #db00ff);
+  font-weight: var(--weight-bold);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.83;
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
 }
 
 .title-decor {
-  background-color: var(--accent-color, #ff0070);
-  font-weight: var(--weight-bold);
   color: var(--dark-color, #000028);
+  font-weight: var(--weight-bold);
+  background-color: var(--accent-color, #ff0070);
 }
 
 .header__description {
@@ -70,52 +73,52 @@
 
 .header__label-record {
   position: absolute;
-  text-transform: uppercase;
-  color: var(--accent-color, #ff0070);
-  right: 20px;
   top: 10px;
+  right: 20px;
   display: flex;
   align-items: center;
+  color: var(--accent-color, #ff0070);
+  text-transform: uppercase;
 }
 
 .header__label-record::after {
   content: '';
   display: inline-block;
+  margin-inline-start: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+  background-color: var(--accent-color, #ff0070);
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 50%;
-  margin-inline-start: 10px;
-  background-color: var(--accent-color, #ff0070);
-  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
 }
 
 .decorated-zone::before {
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
   content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
   border-top: 1px solid var(--accent-color, #ff0070);
   border-right: 1px solid var(--accent-color, #ff0070);
-  right: 10px;
-  top: 10px;
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .decorated-zone::after {
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
   content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   border-bottom: 1px solid var(--accent-color, #ff0070);
   border-left: 1px solid var(--accent-color, #ff0070);
-  left: 10px;
-  bottom: 10px;
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 /* ОСНОВНАЯ ЧАСТЬ  */
 
 .main {
-  padding-inline: var(--spacing-sm);
   margin-block-start: var(--margin-sm);
+  /* padding-inline: var(--spacing-sm); */
 }
 
 .main p {
@@ -123,9 +126,9 @@
 }
 
 .section-title {
+  padding-block-end: var(--spacing-md);
   color: var(--accent-color, #ff0070);
   font-weight: var(--weight-bold);
-  padding-block-end: var(--spacing-md);
 }
 
 .focus-list p {
@@ -137,7 +140,8 @@
 }
 
 .content-section {
-  margin-block-end: 50px;
+  padding: 0 var(--spacing-sm) var(--spacing-sm);
+  margin-block-end: var(--margin-sm);
 } /*   ПЕРЕМЕННАЯ??? */
 
 .focus-advice__item-title {
@@ -150,8 +154,32 @@
 
 .focus-gallery {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: min-content repeat(4, auto);
+  row-gap: var(--spacing-sm);
+  inline-size: 100%;
 }
+
+.picture {
+  inline-size: 100%;
+}
+
+.content-section:last-child {
+  padding-block-end: 0;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: var(--spacing-sm);
+  min-block-size: 668px;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
 .focus .focus-reason {
 }
 .focus-reason__title {
@@ -160,8 +188,7 @@
 }
 .focus-reason__item {
 }
-.title-decor {
-}
+
 .focus-reason__subtitle {
 }
 .focus-obstacle {
