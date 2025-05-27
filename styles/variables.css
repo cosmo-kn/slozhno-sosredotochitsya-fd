@@ -4,13 +4,16 @@
 */
 :root {
   --font-family-main: 'IBM Plex mono';
-  --main-text-color: #f1b2ce;
+  --text-color-main: #f1b2ce;
   --accent-color: #ff0070;
   --main-title-color: #db00ff;
   --dark-color: #000028;
   --spacing-sm: 10px;
   --spacing-md: 20px;
   --spacing-lg: 80px;
+  --margin-sm: 40px;
+  --margin-md: 60px;
+  --margin-lg: 80px;
   --weight-normal: normal;
   --weight-bold: bold;
   --font-size-main: 18px;
