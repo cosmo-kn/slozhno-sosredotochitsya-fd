@@ -3,7 +3,9 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+
 @media (prefers-color-scheme: light) {
+
   :root.theme-light {
     --background-image: url(../images/cover-image-light.png);
   }

@@ -2,6 +2,7 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
   --font-family-main: 'IBM Plex mono';
   --text-color-main: #f1b2ce;
@@ -19,5 +20,4 @@
   --font-size-main: 18px;
   --line-height-main: 23.4px;
   --background-image: url(../images/cover-image-dark.png);
-
 }
