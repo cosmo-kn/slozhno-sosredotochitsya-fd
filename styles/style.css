@@ -2,14 +2,32 @@
 
 .page {
   font-family: var(--font-family-main, monospace);
-  font-size: var(--font-size-main);
-  line-height: var(--line-height-main);
+  font-size: var(--font-size-main, 116px);
+  line-height: var(--line-height-main, 0.83);
   background-color: var(--dark-color, #000028);
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
+
+a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+a:hover {
+  border-block-end: 1px solid var(--text-color-main, #f1b2ce);
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--text-color-main);
+}
+
 /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 
 /* ШАПКА */
@@ -38,14 +56,28 @@
   background-color: transparent;
 }
 
-.header__theme-menu-button_active {
+.header__theme-menu-button:hover {
+  border-color: #ff006f66;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:disabled {
   border: 1px solid var(--accent-color, #ff0070);
+  cursor: initial;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid #ff0070;
 }
 
 .title-main {
@@ -121,7 +153,7 @@
 }
 
 .main p {
-  color: var(--text-color-main);
+  color: var(--text-color-main, #f1b2ce);
 }
 
 .section-title {
@@ -184,14 +216,18 @@
 @media (width >= 768px) {
 
   .header {
-    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 0;
+    padding: var(--spacing-md);
     min-block-size: 1024px;
     grid-template-columns: 1fr 1fr;
-    column-gap: var(--spacing-md);
   }
 
-  .header__title {
+  .title-main {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .title-main {
     grid-area: 2 / 1 / 3 / 3;
+    transform: translateX(-20px);
   }
 
   .header__description {
@@ -232,11 +268,15 @@
     column-gap: var(--spacing-md);
   }
 
-  .focus-obstacle__wrap {
+  .focus-reason .focus-article__wrap {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .focus-obstacle .focus-article__wrap {
     grid-area: 2 / 1 / 3 / 3;
   }
 
-  .focus-advice__wrap {
+  .focus-advice .focus-article__wrap {
     grid-area: 1 / 2 / 3 / 3;
   }
 
@@ -249,7 +289,7 @@
     grid-column: 1 / 4;
   }
 
-   .sunset-img {
+  .sunset-img {
     grid-column: span 2;
   }
 
@@ -276,52 +316,55 @@
 }
 
 @media (width >= 1024px) {
-}
 
-.focus .focus-reason {
-}
+  .header {
+    padding: var(--spacing-md);
+    min-block-size: 768px;
+    grid-template-columns: 1fr repeat(2, 0.5fr) 1fr;
+  }
 
-.focus-reason__title {
-}
+  .header .title-main {
+    grid-column: 1 / -1;
+  }
 
-.focus-reason__list {
-}
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+    grid-column: 2 / 4;
+  }
 
-.focus-reason__item {
-}
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
 
-.focus-reason__subtitle {
-}
+  .header__description {
+    grid-column: 3 / 5;
+  }
 
-.focus-obstacle {
-}
+  .content-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-.focus-obstacle__title {
-}
+  .focus-reason .focus-article__wrap {
+    grid-area: 1 / 2 / 2 / 4;
+  }
 
-.focus-obstacle__list {
-}
+  .focus-obstacle .focus-article__wrap {
+    grid-area: 2 / 1 / 3 / 4;
+  }
 
-.focus-obstacle__item {
-}
+  .focus-obstacle__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
 
-.focus-obstacle__subtitle {
-}
+  .focus-advice .focus-article__wrap {
+    grid-area: 1 / 2 / 3 / 4;
+  }
 
-.focus-advice {
-}
-
-.focus-advice__title {
-}
-
-.focus-advice__subtitle {
-}
-
-.focus-advice__list {
-}
-
-.focus-advice__item {
-}
-
-.focus-advice__item-title {
+  .footer {
+    min-block-size: 768px;
+    padding: var(--spacing-md);
+  }
 }
