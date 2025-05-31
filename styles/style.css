@@ -129,8 +129,8 @@ a:focus-visible {
   position: absolute;
   top: 10px;
   right: 10px;
-  border-block-start: 1px solid var(--accent-color, #ff0070);
   border-inline-end: 1px solid var(--accent-color, #ff0070);
+  border-block-start: 1px solid var(--accent-color, #ff0070);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -140,8 +140,8 @@ a:focus-visible {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  border-block-end: 1px solid var(--accent-color, #ff0070);
   border-inline-start: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid var(--accent-color, #ff0070);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -171,8 +171,8 @@ a:focus-visible {
 }
 
 .content-section {
-  padding: 0 var(--spacing-sm) var(--spacing-sm);
   margin-block-end: var(--spacing-l);
+  padding: 0 var(--spacing-sm) var(--spacing-sm);
   max-inline-size: 100%;
 }
 
@@ -191,9 +191,9 @@ a:focus-visible {
 }
 
 .focus-gallery__img {
+  object-fit: cover;
   max-inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
 }
 
 .content-section:last-child {
@@ -207,6 +207,7 @@ a:focus-visible {
   align-content: center;
   padding: var(--spacing-sm);
   min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .footer__title {
@@ -214,11 +215,11 @@ a:focus-visible {
 }
 
 @media (width >= 768px) {
-
+  
   .header {
+    grid-template-columns: 1fr 1fr;
     padding: var(--spacing-md);
     min-block-size: 1024px;
-    grid-template-columns: 1fr 1fr;
   }
 
   .title-main {
@@ -261,11 +262,11 @@ a:focus-visible {
   }
 
   .content-section {
-    padding: 0 var(--spacing-md) 0;
-    margin-block-end: var(--spacing-xxl);
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: var(--spacing-md);
+    margin-block-end: var(--spacing-xxl);
+    padding: 0 var(--spacing-md) 0;
   }
 
   .focus-reason .focus-article__wrap {
@@ -310,17 +311,16 @@ a:focus-visible {
   }
 
   .footer {
-    min-block-size: 1024px;
     padding: var(--spacing-md);
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
-
   .header {
+    grid-template-columns: 1fr repeat(2, 0.5fr) 1fr;
     padding: var(--spacing-md);
     min-block-size: 768px;
-    grid-template-columns: 1fr repeat(2, 0.5fr) 1fr;
   }
 
   .header .title-main {
@@ -328,9 +328,9 @@ a:focus-visible {
   }
 
   .header__theme-menu {
-    align-self: start;
-    justify-self: center;
     grid-column: 2 / 4;
+    justify-self: center;
+    align-self: start;
   }
 
   .header__theme-menu-list {
@@ -364,7 +364,7 @@ a:focus-visible {
   }
 
   .footer {
-    min-block-size: 768px;
     padding: var(--spacing-md);
+    min-block-size: 768px;
   }
 }

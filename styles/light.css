@@ -30,7 +30,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-
+  
   :root {
     --text-color-main: #353430;
     --accent-color: #ff8dcb;
@@ -50,7 +50,7 @@
     --accent-color: #353430;
   }
 
- .header__label-record {
+  .header__label-record {
     display: none;
   }
 
