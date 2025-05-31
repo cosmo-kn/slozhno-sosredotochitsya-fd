@@ -4,7 +4,7 @@
   font-family: var(--font-family-main, monospace);
   font-size: var(--font-size-main, 116px);
   line-height: var(--line-height-main, 0.83);
-  background-color: var(--dark-color, #000028);
+  background-color: var(--background-color);
   background-image: var(--background-image);
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-  border-block-end: 1px solid var(--text-color-main, #f1b2ce);
+  border-block-end: 1px solid currentColor;
 }
 
 a:focus {
@@ -57,13 +57,13 @@ a:focus-visible {
 }
 
 .header__theme-menu-button:hover {
-  border-color: #ff006f66;
+  border-color: var(--hover-theme-menu-button);
   cursor: pointer;
 }
 
 .header__theme-menu-button:disabled {
   border: 1px solid var(--accent-color, #ff0070);
-  cursor: initial;
+  pointer-events: none;
 }
 
 .header__theme-menu-list {
@@ -77,7 +77,7 @@ a:focus-visible {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid #ff0070;
+  border-block-end: 1px solid currentColor;
 }
 
 .title-main {
@@ -93,7 +93,7 @@ a:focus-visible {
 }
 
 .title-decor {
-  color: var(--dark-color, #000028);
+  color: var(--text-color-subtitle, #000028);
   font-weight: var(--weight-bold);
   background-color: var(--accent-color, #ff0070);
 }
@@ -149,7 +149,7 @@ a:focus-visible {
 /* ОСНОВНАЯ ЧАСТЬ  */
 
 .main {
-  margin-block-start: var(--margin-sm);
+  margin-block-start: var(--spacing-l);
 }
 
 .main p {
@@ -172,7 +172,7 @@ a:focus-visible {
 
 .content-section {
   padding: 0 var(--spacing-sm) var(--spacing-sm);
-  margin-block-end: var(--margin-sm);
+  margin-block-end: var(--spacing-l);
   max-inline-size: 100%;
 }
 
@@ -257,12 +257,12 @@ a:focus-visible {
   /* ОСНОВНАЯ ЧАСТЬ  */
 
   .main {
-    margin-block-start: var(--margin-md);
+    margin-block-start: var(--spacing-xl);
   }
 
   .content-section {
     padding: 0 var(--spacing-md) 0;
-    margin-block-end: var(--margin-lg);
+    margin-block-end: var(--spacing-xxl);
     display: grid;
     grid-template-columns: 1fr 2fr;
     column-gap: var(--spacing-md);
@@ -306,7 +306,7 @@ a:focus-visible {
   }
 
   .content-section:last-child {
-    margin-block-end: var(--margin-md);
+    margin-block-end: var(--spacing-xl);
   }
 
   .footer {
