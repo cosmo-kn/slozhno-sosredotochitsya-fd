@@ -6,24 +6,9 @@
   --background-image: url(../images/cover-image-dark.png);
   --hover-theme-menu-button: #ff006f66;
   --background-color: #00032d;
+  --accent-color-alt: #ff0070;
 }
 
 .theme-dark .header__label-record {
   display: flex;
 }
-
-.theme-dark .header__theme-menu-button:focus-visible {
-  --accent-color: #ff0070;
- }
-
-.theme-dark .header__theme-menu-button:disabled {
-  --accent-color: #ff0070;
-}
-
-.theme-dark .decorated-zone::before {
-  --accent-color: #ff0070;
-  }
-
-.theme-dark .decorated-zone::after {
-  --accent-color: #ff0070;
-  }

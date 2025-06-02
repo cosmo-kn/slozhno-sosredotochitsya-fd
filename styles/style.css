@@ -50,7 +50,7 @@
   border: 1px solid transparent;
   padding-inline: 12px;
   padding-block: 3px;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-color-alt);
   line-height: 18px;
   text-transform: lowercase;
   background-color: transparent;
@@ -63,7 +63,7 @@
 }
 
 .header__theme-menu-button:disabled {
-  border: 1px solid var(--accent-color, #ff0070);
+  border: 1px solid var(--accent-color-alt);
   pointer-events: none;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color, #ff0070);
+  border-block-end: 1px solid var(--accent-color-alt);
 }
 
 .title-main {
@@ -110,7 +110,7 @@
   right: 20px;
   display: flex;
   align-items: center;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-color-alt, #ff0070);
   text-transform: uppercase;
 }
 
@@ -119,8 +119,8 @@
   display: inline-block;
   margin-inline-start: 10px;
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
-  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--accent-color-alt, #ff0070);
+  background-color: var(--accent-color-alt, #ff0070);
   inline-size: 9px;
   block-size: 9px;
 }
@@ -130,8 +130,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  border-inline-end: 1px solid var(--accent-color, #ff0070);
-  border-block-start: 1px solid var(--accent-color, #ff0070);
+  border-inline-end: 1px solid var(--accent-color-alt);
+  border-block-start: 1px solid var(--accent-color-alt);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -141,8 +141,8 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  border-inline-start: 1px solid var(--accent-color, #ff0070);
-  border-block-end: 1px solid var(--accent-color, #ff0070);
+  border-inline-start: 1px solid var(--accent-color-alt);
+  border-block-end: 1px solid var(--accent-color-alt);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -159,7 +159,7 @@
 
 .section-title {
   padding-block-end: var(--spacing-md);
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-color-alt);
   font-weight: var(--weight-bold);
 }
 
@@ -318,7 +318,7 @@
 }
 
 @media (width >= 1024px) {
-  
+
   .header {
     grid-template-columns: 1fr repeat(2, 0.5fr) 1fr;
     padding: var(--spacing-md);
